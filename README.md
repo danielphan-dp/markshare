@@ -1,70 +1,177 @@
-# Getting Started with Create React App
+<p align='center'>
+	<kdb>
+		<img src="./_resources/_images/tasks.png" style="border-radius:50px" alt="project-image" />
+	</kbd>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h3 align="center">
+	Tasks.io
+</h3>
 
-## Available Scripts
+<p align="center">
+	Manage tasks across all devices in real-time!
+</p>
 
-In the project directory, you can run:
+## About The Project
 
-### `npm start`
+A real-time full-stack application for planning and managing tasks. Built with an intuitive yet powerful user interface to boost both your productivity and creativity as well as providing you with a distract free working environment. Compatible with almost any screen size. Syncing across all devices (including web, iOS, and Android) in seconds!
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Core Technologies
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-### `npm test`
+- ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-### `npm run build`
+- ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- ![JWT](https://img.shields.io/badge/JWT-black?style=for-the-badge&logo=JSON%20web%20tokens)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- ![Socket.io](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 
-### `npm run eject`
+- ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Workspace Set-up
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Create a new folder in local machine. This will be the root folder storing both the front-end and back-end of the project (which are maintained in separate repos).
 
-## Learn More
+  ```sh
+  mkdir <WORKSPACE-NAME>
+  ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Clone the front-end repository. The front-end repository is this repo.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  ```sh
+  git clone <FRONT-END-REPOSITORY-LINK>
+  ```
 
-### Code Splitting
+- Clone the back-end repository. To access the back-end repository, click [here](https://github.com/danielphan-dp/messanging-platform-server).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+  ```sh
+  git clone <BACK-END-REPOSITORY-LINK>
+  ```
 
-### Analyzing the Bundle Size
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- From the workspace folder, go to the front-end directory and install necessary packages.
 
-### Making a Progressive Web App
+  ```sh
+  cd <FOLDER-OF-FRONT-END-REPO>
+  npm install
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- From the workspace folder, go to the back-end directory and install necessary packages.
 
-### Advanced Configuration
+  ```sh
+  cd <FOLDER-OF-BACK-END-REPO>
+  npm install
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Run
 
-### Deployment
+To test the features, it is the best to run the front-end and the back-end in two separate terminals.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Start a new terminal window, go to the back-end folder, and run the server.
 
-### `npm run build` fails to minify
+  ```sh
+  cd <FOLDER-OF-BACK-END-REPO>
+  npm start
+  ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Start a new terminal window, go the to the front-end folder, and run the front-end dev server.
+
+  ```sh
+  cd <FOLDER-OF-FRONT-END-REPO>
+  npm start
+  ```
+
+- The application should be available in `localhost:3000`.
+
+### Others
+
+Automation shell scripts coming soon!
+
+## Usage
+
+In progress... Check back soon!
+
+## Features
+
+### Current Features
+
+<!-- - [x] Auto-matic Real-time Features without User Refreshing the Browser
+- [x] Real-time Private Text Messaging System
+- [x] Real-time Updates
+- [x] Friends Systems -->
+
+- [x] User Account Management
+  - [x] Register
+  - [x] Log In
+  - [x] Forgot Password
+  - [x] Reset Password
+- [x] Intuitive and Easy-to-use User Interface
+- [x] Responsive User Interface Compatible with Multiple Screen Size
+
+### Planned Features
+
+- [ ] Real-time Video Calling
+- [ ] GUI Themes and Modes
+  - [ ] Dark Mode, Light Mode, etc.
+  - [ ] Switchers Functionality for Themes and Modes
+- [ ] Chat Message Cells of Different Content Types
+  - [ ] Markdown Cells
+  - [ ] Code Cells (with Syntax Highlighting)
+  - [ ] LaTeX Cells
+  - [ ] React Components Cells
+  - [ ] Etc.
+- [ ] Advanced Features:
+  - [ ] In-browser Transpiler and Bundler (with Webpack or EsBuild)
+    - [ ] Render React Code Cells
+    - [ ] Execute JavaScript Functions
+  - [ ] Security
+    - [ ] For Running Code Cells
+      - [ ] Safely Execute User Code in Browser with Sand-boxing Techniques
+  - [ ] Machine Learning
+    - [ ] Automatic Text Completion
+    - [ ] Natural Language Processing Bots
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+
+1. Fork the Project
+
+2. Create your Feature Branch
+
+   ```sh
+   git checkout -b feature/<YOUR-AMAZING-PROPOSED-FEATURE>
+   ```
+
+3. Commit your Changes
+
+   ```sh
+   git commit -m <YOUR-COMMIT-MESSAGE>
+   ```
+
+4. Push to the Branch
+
+   ```sh
+   git commit -m 'git push origin feature/<YOUR-AMAZING-PROPOSED-FEATURE>'
+   ```
+
+5. Open a Pull Request
+
+The architecture of the project was designed to make it highly flexible to make contributions.
+
+## Acknowledgments
+
+In Progress... Check back soon!
