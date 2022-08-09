@@ -1,12 +1,12 @@
 // infrastructure
-import React from 'react';
-import { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
-import { AuthContext } from '../../../context/auth';
-import { removeFromLocalStorage } from '../../../helpers/auth';
+import React from "react";
+import { useContext } from "react";
+import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../../context/auth";
+import { removeFromLocalStorage } from "../../../helpers/auth";
 
 // components
-import NavButton from '../NavButton/NavButton';
+import NavButton from "../NavButton/NavButton";
 
 const NavBar = () => {
   const [auth, setAuth] = useContext(AuthContext);
@@ -18,7 +18,7 @@ const NavBar = () => {
 
   return (
     <ul className="nav shadow mb-2 d-flex nav-pills justify-content-center">
-      <NavButton title="Home" to="/" />
+      {/*<NavButton title="Home" to="/" />*/}
       {auth !== null && auth !== undefined ? (
         <>
           <div class="dropdown show p-2 d-flex">

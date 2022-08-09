@@ -1,25 +1,25 @@
 // infrastructure
-import React, { useState, useContext } from 'react';
-import axios from 'axios';
-import { AuthContext } from '../../context/auth';
-import { saveToLocalStorage } from '../../helpers/auth';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from "react";
+import axios from "axios";
+import { AuthContext } from "../../context/auth";
+import { saveToLocalStorage } from "../../helpers/auth";
+import { useNavigate } from "react-router-dom";
 
 // components
-import toast from 'react-hot-toast';
-import Input from '../../components/Forms/Input/Input';
-import SubmitButton from '../../components/Forms/SubmitButton/SubmitButton';
-import { Link } from 'react-router-dom';
+import toast from "react-hot-toast";
+import Input from "../../components/Forms/Input/Input";
+import SubmitButton from "../../components/Forms/SubmitButton/SubmitButton";
+import { Link } from "react-router-dom";
 
 const ForgotPasswordPage = () => {
   // context hooks
   const [auth, setAuth] = useContext(AuthContext);
 
   // state hooks
-  const [emailAddress, setEmailAddress] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmedPassword, setConfirmedPassword] = useState('');
-  const [resetCode, setResetCode] = useState('');
+  const [emailAddress, setEmailAddress] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmedPassword, setConfirmedPassword] = useState("");
+  const [resetCode, setResetCode] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(false);
 
   // navigation hooks
@@ -28,33 +28,33 @@ const ForgotPasswordPage = () => {
   // configs
   const registerFormFieldsConfig = [
     {
-      title: 'Email Address (*)',
-      type: 'email',
-      placeholder: 'Enter email address',
+      title: "Email Address (*)",
+      type: "email",
+      placeholder: "Enter email address",
       value: emailAddress,
       setValue: setEmailAddress,
       alwaysVisible: true,
     },
     {
-      title: 'New Password (*)',
-      type: 'password',
-      placeholder: 'Enter new password',
+      title: "New Password (*)",
+      type: "password",
+      placeholder: "Enter new password",
       value: password,
       setValue: setPassword,
       alwaysVisible: false,
     },
     {
-      title: 'Confirm New Password (*)',
-      type: 'password',
-      placeholder: 'Re-enter new password',
+      title: "Confirm New Password (*)",
+      type: "password",
+      placeholder: "Re-enter new password",
       value: confirmedPassword,
       setValue: setConfirmedPassword,
       alwaysVisible: false,
     },
     {
-      title: 'Reset Password Code (Sent to Your Email) (*)',
-      type: 'text',
-      placeholder: 'Enter reset password code',
+      title: "Reset Password Code (Sent to Your Email) (*)",
+      type: "text",
+      placeholder: "Enter reset password code",
       value: resetCode,
       setValue: setResetCode,
       alwaysVisible: false,
@@ -88,7 +88,7 @@ const ForgotPasswordPage = () => {
         return;
       } else {
         toast.success(
-          'Enter a new password and the reset password code sent to your email address.'
+          "Enter a new password and the reset password code sent to your email address."
         );
         setIsValidEmail(true);
       }
@@ -111,13 +111,13 @@ const ForgotPasswordPage = () => {
         toast.error(data.error);
         return;
       } else {
-        toast.success('Password reset process succeeded! You are all set!');
-        navigate('/login');
+        toast.success("Password reset process succeeded! You are all set!");
+        navigate("/login");
       }
     } catch (err) {
       console.log(err);
       toast.error(
-        'Something went wrong with password reset process! Please try again.'
+        "Something went wrong with password reset process! Please try again."
       );
     }
   };
@@ -125,11 +125,11 @@ const ForgotPasswordPage = () => {
   return (
     <div
       className="d-flex justify-content-center align-items-center vh-100"
-      style={{ marginTop: '-50px' }}
+      style={{ marginTop: "-50px" }}
     >
       <div className="container">
         <div className="row">
-          <div className="col-md-6 offset-md-3">
+          <div className="col-md-6 offset-md-3 authbox">
             <h1 className="fw-bold mb-3">Reset Password</h1>
             <form>
               {registerFormFieldsConfig.map(

@@ -7,6 +7,7 @@
     /*filter: brightness(0.90);*/
     /*border: 1px solid rgba(0, 0, 0, 0.1) !important;*/
     /*transform: scale(1.05);*/
+    opacity: 0.9;
     cursor: pointer !important;
 }
 
@@ -14,4 +15,42 @@
 .btn {
     -webkit-box-shadow: none !important;
     outline: -webkit-focus-ring-color auto 0px !important;
+}
+
+.my-masonry-grid {
+    display: -webkit-box; /* Not needed if autoprefixing */
+    display: -ms-flexbox; /* Not needed if autoprefixing */
+    display: flex;
+    margin-left: -30px; /* gutter size offset */
+    width: auto;
+}
+.my-masonry-grid_column {
+    padding-left: 30px; /* gutter size */
+    background-clip: padding-box;
+}
+
+.form-control {
+    border: 1px solid gold !important;
+    background: #fffbe6 !important;
+}
+
+body {
+    background-image: url('./images/bg-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.authbox {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 5px;
+    /*color: #ccc;*/
+    padding: 50px;
+}
+
+.authbox h1 {}
+
+.form-control {
+    /*background: #ccc !important;*/
+    border: 1px solid #ccc !important;
 }

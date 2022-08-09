@@ -1,28 +1,28 @@
 // infrastructure
-import React, { useState, useContext } from 'react';
-import axios from 'axios';
-import { AuthContext } from '../../context/auth';
-import { saveToLocalStorage } from '../../helpers/auth';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from "react";
+import axios from "axios";
+import { AuthContext } from "../../context/auth";
+import { saveToLocalStorage } from "../../helpers/auth";
+import { useNavigate } from "react-router-dom";
 
 // components
-import toast, { Toaster } from 'react-hot-toast';
-import Input from '../../components/Forms/Input/Input';
-import SubmitButton from '../../components/Forms/SubmitButton/SubmitButton';
-import { Link } from 'react-router-dom';
+import toast, { Toaster } from "react-hot-toast";
+import Input from "../../components/Forms/Input/Input";
+import SubmitButton from "../../components/Forms/SubmitButton/SubmitButton";
+import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
   // context hooks
   const [auth, setAuth] = useContext(AuthContext);
 
   // state hooks
-  const [userName, setUserName] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [emailAddress, setEmailAddress] = useState('');
-  const [confirmedEmailAddress, setConfirmedEmailAddress] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmedPassword, setConfirmedPassword] = useState('');
+  const [userName, setUserName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [emailAddress, setEmailAddress] = useState("");
+  const [confirmedEmailAddress, setConfirmedEmailAddress] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmedPassword, setConfirmedPassword] = useState("");
 
   // navigation hooks
   const navigate = useNavigate();
@@ -30,51 +30,51 @@ const RegisterPage = () => {
   // configs
   const registerFormFieldsConfig = [
     {
-      title: 'First Name',
-      type: 'text',
-      placeholder: 'Enter first name',
+      title: "First Name",
+      type: "text",
+      placeholder: "Enter first name",
       value: firstName,
       setValue: setFirstName,
     },
     {
-      title: 'Last Name',
-      type: 'text',
-      placeholder: 'Enter last name',
+      title: "Last Name",
+      type: "text",
+      placeholder: "Enter last name",
       value: lastName,
       setValue: setLastName,
     },
     {
-      title: 'User Name (*)',
-      type: 'text',
-      placeholder: 'Enter user name',
+      title: "User Name (*)",
+      type: "text",
+      placeholder: "Enter user name",
       value: userName,
       setValue: setUserName,
     },
     {
-      title: 'Email Address (*)',
-      type: 'email',
-      placeholder: 'Enter email address',
+      title: "Email Address (*)",
+      type: "email",
+      placeholder: "Enter email address",
       value: emailAddress,
       setValue: setEmailAddress,
     },
     {
-      title: 'Confirm Email Address (*)',
-      type: 'email',
-      placeholder: 'Re-enter email address',
+      title: "Confirm Email Address (*)",
+      type: "email",
+      placeholder: "Re-enter email address",
       value: confirmedEmailAddress,
       setValue: setConfirmedEmailAddress,
     },
     {
-      title: 'Password (*)',
-      type: 'password',
-      placeholder: 'Enter password',
+      title: "Password (*)",
+      type: "password",
+      placeholder: "Enter password",
       value: password,
       setValue: setPassword,
     },
     {
-      title: 'Confirm Password (*)',
-      type: 'password',
-      placeholder: 'Re-enter password',
+      title: "Confirm Password (*)",
+      type: "password",
+      placeholder: "Re-enter password",
       value: confirmedPassword,
       setValue: setConfirmedPassword,
     },
@@ -99,7 +99,7 @@ const RegisterPage = () => {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      toast.success('Registration Form Submitted!');
+      toast.success("Registration Form Submitted!");
       const { data } = await axios.post(`/signup`, {
         name: userName,
         email: emailAddress,
@@ -110,11 +110,11 @@ const RegisterPage = () => {
         return;
       } else {
         setAuth(data);
-        saveToLocalStorage('auth', data);
-        toast.success('Registration Successful!');
-        toast.success('Redirecting to dashboard page...');
+        saveToLocalStorage("auth", data);
+        toast.success("Registration Successful!");
+        toast.success("Redirecting to dashboard page...");
         setTimeout(() => {
-          navigate('/dashboard');
+          navigate("/dashboard");
         }, 5);
       }
     } catch (err) {
@@ -125,12 +125,12 @@ const RegisterPage = () => {
   return (
     <div
       className="d-flex justify-content-center align-items-center vh-100"
-      style={{ marginTop: '-50px' }}
+      style={{ marginTop: "-50px" }}
     >
       <Toaster />
       <div className="container">
         <div className="row">
-          <div className="col-md-6 offset-md-3">
+          <div className="col-md-6 offset-md-3 authbox">
             <h1 className="fw-bold mb-3">Register</h1>
             <form>
               {registerFormFieldsConfig.map((props) => (
