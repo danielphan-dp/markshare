@@ -2,9 +2,11 @@ import React from 'react';
 
 const Error404 = () => {
   return (
-    <div>
-      <h1>Error404: Page not found.</h1>
-      No worries! Go to the home page and try again.
+    <div
+      className="d-flex justify-content-center align-items-center vh-100"
+      style={{ marginTop: '-200px' }}
+    >
+      <h1>404: Page not found</h1>
     </div>
   );
 };

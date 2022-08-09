@@ -1,12 +1,21 @@
-import React, { useState } from 'react';
+// infrastructure
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
+import { AuthContext } from '../../context/auth';
+import { saveToLocalStorage } from '../../helpers/auth';
+import { useNavigate } from 'react-router-dom';
+
+// components
 import toast, { Toaster } from 'react-hot-toast';
 import Input from '../../components/Forms/Input/Input';
+import SubmitButton from '../../components/Forms/SubmitButton/SubmitButton';
+import { Link } from 'react-router-dom';
 
 const RegisterPage = () => {
-  console.log(process.env.REACT_APP_API);
+  // context hooks
+  const [auth, setAuth] = useContext(AuthContext);
 
-  // hooks
+  // state hooks
   const [userName, setUserName] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -14,6 +23,9 @@ const RegisterPage = () => {
   const [confirmedEmailAddress, setConfirmedEmailAddress] = useState('');
   const [password, setPassword] = useState('');
   const [confirmedPassword, setConfirmedPassword] = useState('');
+
+  // navigation hooks
+  const navigate = useNavigate();
 
   // configs
   const registerFormFieldsConfig = [
@@ -69,7 +81,6 @@ const RegisterPage = () => {
   ];
 
   const validateForm = () => {
-    // TODO: perform advanced forms validation
     const validUserName =
       userName && 8 < userName.length && userName.length < 20;
     const validEmail =
@@ -85,38 +96,26 @@ const RegisterPage = () => {
     return validUserName && validEmail && validPassword;
   };
 
-  const resetForm = () => {
-    setUserName('');
-    setFirstName('');
-    setLastName('');
-    setEmailAddress('');
-    setConfirmedEmailAddress('');
-    setPassword('');
-    setConfirmedPassword('');
-  };
-
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
-      // TODO: send registration data to the backend
-      // TODO: redirect user to the dashboard page
       toast.success('Registration Form Submitted!');
-      // resetForm();
-      const requestData = {
+      const { data } = await axios.post(`/signup`, {
         name: userName,
         email: emailAddress,
         password: password,
-      };
-      const { data } = await axios.post(
-        `${process.env.REACT_APP_API}/signup`,
-        requestData
-      );
+      });
       if (data.error) {
         toast.error(data.error);
         return;
       } else {
+        setAuth(data);
+        saveToLocalStorage('auth', data);
         toast.success('Registration Successful!');
-        console.log('registration success', data);
+        toast.success('Redirecting to dashboard page...');
+        setTimeout(() => {
+          navigate('/dashboard');
+        }, 5);
       }
     } catch (err) {
       console.log(err);
@@ -126,7 +125,7 @@ const RegisterPage = () => {
   return (
     <div
       className="d-flex justify-content-center align-items-center vh-100"
-      style={{ marginTop: '-100px' }}
+      style={{ marginTop: '-50px' }}
     >
       <Toaster />
       <div className="container">
@@ -134,38 +133,19 @@ const RegisterPage = () => {
           <div className="col-md-6 offset-md-3">
             <h1 className="fw-bold mb-3">Register</h1>
             <form>
-              {/* Form Fields */}
               {registerFormFieldsConfig.map((props) => (
                 <Input {...props} />
               ))}
-              {/* Submit Button */}
-              <button
-                type="submit"
-                class="btn btn-primary"
-                disabled={!validateForm()}
-                onClick={handleFormSubmit}
-              >
-                Submit
-              </button>
+              <SubmitButton
+                submitValidator={validateForm}
+                formSubmitHandler={handleFormSubmit}
+              />
             </form>
+            <p className="mt-3">
+              Already have an account? <Link to="/login">Log In</Link>
+            </p>
           </div>
         </div>
-        {/* <pre className="d-flex justify-content-center">
-          data:{' '}
-          {JSON.stringify(
-            {
-              firstName,
-              lastName,
-              userName,
-              emailAddress,
-              confirmedEmailAddress,
-              password,
-              confirmedPassword,
-            },
-            null,
-            4
-          )}
-        </pre> */}
       </div>
     </div>
   );
