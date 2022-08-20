@@ -93,8 +93,14 @@ To test the features, it is the best to run the front-end and the back-end in tw
   - [x] Log In
   - [x] Forgot Password
   - [x] Reset Password
+- [x] Operations for Markdown posts
+  - [x] Create posts
+  - [x] Update posts
+  - [x] Delete posts
+  - [x] Search posts
+  - [x] Pagination
 - [x] Intuitive and Easy-to-use User Interface
-- [x] Responsive User Interface Compatible with Multiple Screen Size
+- [x] Responsive User Interface Compatible with Different Screen Sizes
 
 ## Contributing
 
