@@ -26,6 +26,9 @@ working environment.
 
 ### Workspace Set-up
 
+Front-end Repo - `https://github.com/danielphan-dp/markshare.git` \
+Back-end Repo - `https://github.com/danielphan-dp/markshare-be.git`
+
 - Create a new folder in your local machine.
 
   ```sh
@@ -62,45 +65,39 @@ working environment.
 
 ### Run
 
-To test the features, it is the best to run the front-end and the back-end in two separate terminals.
+Start back-end and front-end (recommended 2 terminal window).
 
-- Start a new terminal window, go to the back-end folder, and run the server.
+- Start the back-end.
 
   ```sh
   cd <FOLDER-OF-BACK-END-REPO>
   npm start
   ```
 
-- Start a new terminal window, go the to the front-end folder, and run the front-end dev server.
+- Start the front-end.
 
   ```sh
   cd <FOLDER-OF-FRONT-END-REPO>
   npm start
   ```
 
-- The application should be available in `localhost:3000`.
+- Now, the application should be available at `localhost:3000`.
 
 
 ## Features
 
-<!-- - [x] Auto-matic Real-time Features without User Refreshing the Browser
-- [x] Real-time Private Text Messaging System
-- [x] Real-time Updates
-- [x] Friends Systems -->
-
-- [x] User Account Management
+- [x] User account management
   - [x] Register
   - [x] Log In
-  - [x] Forgot Password
-  - [x] Reset Password
-- [x] Operations for Markdown posts
+  - [x] Forgot password
+  - [x] Reset password
+- [x] Real-time operations for Markdown posts
   - [x] Create posts
   - [x] Update posts
   - [x] Delete posts
   - [x] Search posts
-  - [x] Pagination
-- [x] Intuitive and Easy-to-use User Interface
-- [x] Responsive User Interface Compatible with Different Screen Sizes
+- [x] Pagination of posts
+- [x] Intuitive and responsive GUI compatible with different screen sizes
 
 ## Contributing
 
