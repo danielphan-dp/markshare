@@ -3,14 +3,14 @@
 </p>
 <h3 align="center">MarkShare</h3>
 
-## About The Project
+### Abstract
 
 A real-time full-stack web application for sharing markdown texts.
 Built with an intuitive yet powerful Markdown text editor to boost both your
 productivity and creativity as well as providing you with a distract-free
 working environment.
 
-## Core Technologies
+### Core Technologies
 
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
@@ -21,8 +21,6 @@ working environment.
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
-
-## Getting Started
 
 ### Workspace Set-up
 
@@ -84,7 +82,7 @@ Start back-end and front-end (recommended 2 terminal windows).
 - Now, the application should be available at `localhost:3000`.
 
 
-## Features
+### Features
 
 - [x] User account management
   - [x] Register
@@ -99,33 +97,22 @@ Start back-end and front-end (recommended 2 terminal windows).
 - [x] Pagination of posts
 - [x] Intuitive and responsive GUI compatible with different screen sizes
 
-## Contributing
+### Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**. 
 
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-
 1. Fork the Project
-
 2. Create your Feature Branch
-
    ```sh
    git checkout -b feature/<YOUR-AMAZING-PROPOSED-FEATURE>
    ```
-
 3. Commit your Changes
-
    ```sh
    git commit -m <YOUR-COMMIT-MESSAGE>
    ```
-
 4. Push to the Branch
-
    ```sh
    git push origin feature/<YOUR-AMAZING-PROPOSED-FEATURE>
    ```
-
 5. Open a Pull Request
-
-The architecture of the project was designed to make it highly flexible to make contributions.
-
