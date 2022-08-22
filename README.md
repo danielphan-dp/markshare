@@ -1,5 +1,5 @@
 <p align='center'>
-  <img src="./_resources/_images/tasks.png" style="border-radius:50px" alt="project-image" />
+  <img src="./_resources/_images/tasks.png" style="border-radius:50px" alt="project-image" width="80%" />
 </p>
 <h3 align="center">MarkShare</h3>
 
