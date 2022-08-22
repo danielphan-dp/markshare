@@ -65,7 +65,7 @@ Back-end Repo - `https://github.com/danielphan-dp/markshare-be.git`
 
 ### Run
 
-Start back-end and front-end (recommended 2 terminal window).
+Start back-end and front-end (recommended 2 terminal windows).
 
 - Start the back-end.
 
@@ -122,7 +122,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 4. Push to the Branch
 
    ```sh
-   git commit -m 'git push origin feature/<YOUR-AMAZING-PROPOSED-FEATURE>'
+   git push origin feature/<YOUR-AMAZING-PROPOSED-FEATURE>
    ```
 
 5. Open a Pull Request
